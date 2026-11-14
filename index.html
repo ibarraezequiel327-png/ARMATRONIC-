@@ -1,283 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Armtronic 2026 | Brazos Robóticos con Soldadora de Punto - Exportadores desde Buenos Aires</title>
-<meta name="description" content="Armtronic 2026 - Fabricantes y exportadores de brazos robóticos con soldadora de punto desde José C. Paz, Buenos Aires, Argentina.">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
-:root{--verde:#00ffc6;--azul:#00a8ff;--oscuro:#0b1117;--card:#111e28}
-body{background:var(--oscuro);color:#fff;line-height:1.6}
-a{color:var(--verde);text-decoration:none}
-.topbar{background:#00ffc6;color:#000;text-align:center;padding:8px 15px;font-weight:700;font-size:13px;letter-spacing:.5px}
-header{position:sticky;top:0;z-index:100;background:rgba(5,10,15,.92);backdrop-filter:blur(10px);display:flex;justify-content:space-between;align-items:center;padding:14px 5%;border-bottom:1px solid #222}
-.logo{font-size:22px;font-weight:900;color:var(--verde)}
-.logo span{color:#fff;font-weight:400;font-size:13px;display:block;line-height:1}
-nav{display:flex;gap:18px;flex-wrap:wrap}
-nav a{color:#ddd;font-size:14px;font-weight:600}
-nav a:hover{color:var(--verde)}
-.btn{background:var(--verde);color:#000!important;padding:10px 18px;border-radius:30px;font-weight:800}
-.btn-outline{border:1.5px solid var(--verde);color:var(--verde)!important;padding:9px 16px;border-radius:30px;font-weight:700}
-
-/* PORTADA */
-.portada{min-height:92vh;display:flex;align-items:center;padding:40px 5%;background:radial-gradient(circle at 70% 20%, rgba(0,255,198,.25), transparent 40%), radial-gradient(circle at 10% 90%, rgba(0,168,255,.25), transparent 40%), #071019;position:relative;overflow:hidden}
-.portada-grid{max-width:1150px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
-.badge{display:inline-block;background:rgba(0,255,198,.15);border:1px solid var(--verde);color:var(--verde);padding:6px 12px;border-radius:30px;font-size:12px;font-weight:800;letter-spacing:1px;margin-bottom:15px}
-.portada h1{font-size:clamp(38px,6vw,68px);line-height:.95;margin-bottom:12px}
-.portada h1 em{color:var(--verde);font-style:normal}
-.portada p.lead{font-size:19px;color:#cbd5e1;margin-bottom:20px}
-.stats{display:flex;gap:15px;flex-wrap:wrap;margin:25px 0}
-.stat{background:#0f1e2b;border:1px solid #1e3445;padding:14px 18px;border-radius:12px;min-width:140px}
-.stat b{font-size:24px;color:var(--verde);display:block}
-.stat span{font-size:12px;color:#94a3b8}
-.hero-card{background:linear-gradient(180deg,#132a38,#0a151f);border:1px solid #1e3a4a;border-radius:20px;padding:28px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.hero-card .big{font-size:90px;filter:drop-shadow(0 0 25px #00ffc6)}
-.hero-card h3{margin:10px 0 5px}
-.hero-card p{color:#94a3b8;font-size:14px}
-.hero-card .precio{font-size:32px;color:var(--verde);font-weight:900;margin:15px 0 5px}
-.hero-card small{color:#94a3b8}
-
-section{padding:65px 5%;max-width:1150px;margin:auto}
-section h2{font-size:32px;margin-bottom:8px}
-section h2 span{color:var(--verde)}
-.sub{color:#94a3b8;margin-bottom:30px;max-width:750px}
-.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.card{background:var(--card);padding:22px;border-radius:16px;border:1px solid #1e3445}
-.card h3{margin-bottom:8px;color:#fff}
-.card p{color:#cbd5e1;font-size:14.5px}
-.card .icon{font-size:30px;margin-bottom:10px}
-.card.verde{border-top:4px solid var(--verde)}
-.card.azul{border-top:4px solid var(--azul)}
-
-/* TABLA */
-table{width:100%;border-collapse:collapse;background:#0f1c28;border-radius:14px;overflow:hidden;font-size:14px}
-th{background:#00ffc6;color:#000;text-align:left;padding:14px}
-td{padding:12px 14px;border-bottom:1px solid #1e3445}
-tr:last-child td{border-bottom:none}
-td:first-child{font-weight:700;color:#fff}
-
-/* EXPORT */
-.export{background:linear-gradient(90deg,#003a33,#071a2a);border:1px solid #00ffc6;border-radius:20px;padding:30px;display:grid;grid-template-columns:1.2fr .8fr;gap:25px}
-.paises{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
-.paises span{background:#fff;color:#000;padding:6px 12px;border-radius:30px;font-size:13px;font-weight:700}
-
-/* EQUIPO */
-.equipo{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
-.miembro{background:#111e28;border-radius:14px;padding:18px;border-left:4px solid var(--verde)}
-.miembro b{display:block}
-.miembro span{font-size:13px;color:#00ffc6;font-weight:700}
-.miembro p{font-size:13px;color:#94a3b8;margin-top:6px}
-
-/* CONTACTO */
-.contacto-box{background:#fff;color:#111;border-radius:20px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:25px}
-.contacto-box h2{color:#111}
-.contacto-box h2 span{color:#00a8a8}
-.contacto-box p{color:#444}
-.insta-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);color:#fff!important;padding:13px 20px;border-radius:12px;font-weight:800;margin-top:12px}
-.wsp-btn{display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#fff!important;padding:13px 20px;border-radius:12px;font-weight:800;margin-top:10px}
-footer{background:#05080b;text-align:center;padding:30px;color:#64748b;font-size:13px}
-footer b{color:#fff}
-@media(max-width:820px){.portada-grid,.export,.contacto-box{grid-template-columns:1fr} header{flex-direction:column;gap:10px} nav{justify-content:center}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armtronic 2026 - Robótica y Soldadura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        h1 {
+            color: #00ffcc;
+        }
+        .insta-botón {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 12px 25px;
+            background: linear-divider(45deg, #405de6, #5851db, #833ab4, #c13584, #fd1d1d, #f56040);
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: opacity 0.3s;
+        }
+        .insta-botón:hover {
+            opacity: 0.9;
+        }
+        .info {
+            text-align: left;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h1>ARMTRONIC</h1>
+        <p>2026 • ROBOTICS & WELDING</p>
+        
+        <p>Escribinos y te mandamos catálogo completo, video funcionando y cotización con envío a tu país.</p>
 
-<div class="topbar">🌎 EXPORTAMOS DESDE JOSÉ C. PAZ, BUENOS AIRES, ARGENTINA • ENVÍOS A TODA LATINOAMÉRICA • GARANTÍA 12 MESES</div>
+        <!-- Botón de Instagram -->
+        <a href="https://instagram.com/armtronic.2026" target="_blank" class="insta-botón">📸 Seguinos en Instagram @armtronic.2026</a>
 
-<header>
-  <div class="logo">ARMTRONIC <span>2026 • ROBOTICS & WELDING</span></div>
-  <nav>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#producto">Producto</a>
-    <a href="#especificaciones">Especificaciones</a>
-    <a href="#exportacion">Exportación</a>
-    <a href="#equipo">Equipo</a>
-    <a href="#contacto" class="btn">Cotizar Ahora</a>
-  </nav>
-</header>
+        <div class="info">
+            <p>📍 <b>Ubicación:</b><br>José C. Paz, Buenos Aires, Argentina</p>
+            <p>📧 <b>Correo electrónico:</b><br>armtronic2026@gmail.com</p>
+            <p>📸 <b>Instagram:</b><br>@armtronic.2026 - https://instagram.com/armtronic.2026</p>
+            <p>🕒 <b>Horario:</b><br>Lun a Vie 9 a 18hs (Argentina)</p>
+        </div>
 
-<!-- PORTADA -->
-<div class="portada">
-  <div class="portada-grid">
-    <div>
-      <span class="badge">● FABRICANTE ARGENTINO • EXPORTADOR VERIFICADO</span>
-      <h1>Brazos Robóticos<br><em>con Soldadora<br>de Punto</em></h1>
-      <p class="lead">Automatización industrial real, fabricada en <b>José C. Paz, Buenos Aires</b>. Precisión, velocidad y seguridad para tu línea de producción.</p>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <a href="#contacto" class="btn">📦 Pedir Cotización Exportación</a>
-        <a href="#especificaciones" class="btn-outline">Ver Ficha Técnica →</a>
-      </div>
-      <div class="stats">
-        <div class="stat"><b>± 0.05 mm</b><span>Precisión de soldadura</span></div>
-        <div class="stat"><b>120 pts/min</b><span>Velocidad máxima</span></div>
-        <div class="stat"><b>6 Ejes</b><span>Movimiento articulado</span></div>
-        <div class="stat"><b>24/7</b><span>Operación continua</span></div>
-      </div>
-      <p style="font-size:13px;color:#94a3b8">📍 José C. Paz, Buenos Aires, Argentina | ✈️ Exportamos a Chile, Uruguay, Paraguay, Bolivia, Perú, Brasil y México</p>
+        <p style="font-size: 12px; color: #888; margin-top: 20px;">Respondemos consultas de exportación en menos de 24hs.</p>
     </div>
-    <div class="hero-card">
-      <div class="big">🦾</div>
-      <h3>ARMTRONIC AT-2026 PRO</h3>
-      <p>Modelo insignia para industria automotriz, metalúrgica y baterías. Listo para exportar.</p>
-      <div class="precio">Consultar Precio Export</div>
-      <small>FOB Buenos Aires • Incluye capacitación online</small>
-      <br><br>
-      <a href="https://instagram.com/armtronic.2026" target="_blank" class="insta-btn">📸 @armtronic.2026</a>
-      <p style="margin-top:12px;font-size:12px">+500 seguidores • Videos del robot en funcionamiento</p>
-    </div>
-  </div>
-</div>
-
-<!-- NOSOTROS -->
-<section id="nosotros">
-  <h2>Quiénes <span>somos</span></h2>
-  <p class="sub">Somos <b>Armtronic 2026</b>, empresa escolar innovadora de <b>7-2 Informática</b> de José C. Paz. Diseñamos, fabricamos y exportamos brazos robóticos con soldadora de punto. Nuestra misión es llevar tecnología argentina al mundo.</p>
-  <div class="grid3">
-    <div class="card verde"><div class="icon">🎯</div><h3>Misión</h3><p>Demostrar cómo la robótica aplicada a la soldadura mejora la precisión, seguridad y eficiencia en procesos industriales, integrando innovación tecnológica desde el ámbito escolar al industrial.</p></div>
-    <div class="card azul"><div class="icon">👁️</div><h3>Visión</h3><p>Ser referentes en automatización y robótica en Latinoamérica, inspirando a futuros estudiantes a desarrollar soluciones tecnológicas que transformen la industria.</p></div>
-    <div class="card verde"><div class="icon">🌎</div><h3>Exportadores</h3><p>Fabricamos en Buenos Aires y exportamos a toda Latinoamérica. Embalaje reforzado, documentación aduanera completa y soporte técnico en español.</p></div>
-  </div>
-</section>
-
-<!-- PRODUCTO -->
-<section id="producto">
-  <h2>Qué <span>hacemos</span></h2>
-  <p class="sub">Brazos robóticos capaces de realizar soldadura de punto en láminas metálicas con rapidez, precisión y seguridad en cada unión.</p>
-  <div class="grid4">
-    <div class="card"><div class="icon">🚗</div><h3>Industria Automotriz</h3><p>Soldadura de chapas, puertas y carrocerías. Ideal para autopartistas.</p></div>
-    <div class="card"><div class="icon">🔋</div><h3>Baterías</h3><p>Unión de componentes metálicos en packs de baterías de litio.</p></div>
-    <div class="card"><div class="icon">🏭</div><h3>Metalurgia</h3><p>Producción repetitiva de uniones metálicas sin fatiga ni error.</p></div>
-    <div class="card"><div class="icon">⚡</div><h3>Líneas de Producción</h3><p>Procesos rápidos y precisos, integrables a tu línea actual.</p></div>
-  </div>
-</section>
-
-<!-- ESPECIFICACIONES DETALLADAS -->
-<section id="especificaciones">
-  <h2>Ficha Técnica <span>AT-2026 PRO</span></h2>
-  <p class="sub">Parámetros reales medidos en nuestro taller de José C. Paz. Todos los modelos se entregan calibrados y probados.</p>
-  <table>
-    <tr><th>Parámetro</th><th>Valor - AT-2026 PRO</th><th>Valor - AT-2026 LITE</th></tr>
-    <tr><td>Alcance del brazo</td><td>1.200 mm</td><td>850 mm</td></tr>
-    <tr><td>Ejes de movimiento</td><td>6 ejes articulados</td><td>4 ejes</td></tr>
-    <tr><td>Precisión / Repetibilidad</td><td>± 0.05 mm</td><td>± 0.10 mm</td></tr>
-    <tr><td>Capacidad de carga</td><td>8 kg (pinza + electrodos)</td><td>5 kg</td></tr>
-    <tr><td>Velocidad de soldadura</td><td>Hasta 120 puntos / min</td><td>Hasta 80 puntos / min</td></tr>
-    <tr><td>Espesor de chapa</td><td>0.5 mm a 3.0 mm (acero)</td><td>0.5 mm a 2.0 mm</td></tr>
-    <tr><td>Corriente de soldadura</td><td>2.000 - 8.000 A regulable</td><td>1.500 - 5.000 A</td></tr>
-    <tr><td>Tiempo de soldadura</td><td>0.1 - 2.0 seg por punto</td><td>0.2 - 2.5 seg</td></tr>
-    <tr><td>Presión de electrodos</td><td>150 - 400 kgF</td><td>120 - 300 kgF</td></tr>
-    <tr><td>Alimentación</td><td>220V / 50Hz - Argentina</td><td>220V / 50Hz</td></tr>
-    <tr><td>Controlador</td><td>Arduino + PLC + Panel táctil</td><td>Arduino + Panel táctil</td></tr>
-    <tr><td>Material estructura</td><td>Aluminio + Acero + Piezas 3D PLA+ / PETG</td><td>Aluminio + Piezas 3D</td></tr>
-    <tr><td>Refrigeración</td><td>Por aire + agua en electrodos</td><td>Por aire</td></tr>
-    <tr><td>Dimensiones base</td><td>60 x 60 x 110 cm</td><td>50 x 50 x 95 cm</td></tr>
-    <tr><td>Peso total</td><td>45 kg</td><td>32 kg</td></tr>
-    <tr><td>Software</td><td>Programación por puntos + Modo manual</td><td>Programación por puntos</td></tr>
-    <tr><td>Garantía</td><td>12 meses + Soporte online</td><td>6 meses</td></tr>
-  </table>
-
-  <h3 style="margin:35px 0 15px">🔧 Partes principales</h3>
-  <div class="grid4">
-    <div class="card"><h3>Fuente de alimentación</h3><p>Proporciona la energía eléctrica estable.</p></div>
-    <div class="card"><h3>Transformador</h3><p>Adapta la tensión a la corriente de soldadura.</p></div>
-    <div class="card"><h3>Electrodos de Cobre</h3><p>Conducen corriente y presionan las piezas.</p></div>
-    <div class="card"><h3>Sistema de Presión</h3><p>Mantiene las láminas juntas sin deformar.</p></div>
-    <div class="card"><h3>Controlador</h3><p>Regula tiempo, intensidad y secuencia.</p></div>
-    <div class="card"><h3>Conductores</h3><p>Transportan la energía sin pérdida.</p></div>
-    <div class="card"><h3>Estructura</h3><p>Sostiene el equipo con alta rigidez.</p></div>
-    <div class="card"><h3>Refrigeración</h3><p>Evita sobrecalentamiento en uso continuo.</p></div>
-  </div>
-
-  <h3 style="margin:35px 0 15px">🔨 Etapas del proceso</h3>
-  <div class="grid4">
-    <div class="card"><b>1. Posicionamiento</b><p>Se colocan las piezas en la mesa.</p></div>
-    <div class="card"><b>2. Presión</b><p>Los electrodos las mantienen juntas.</p></div>
-    <div class="card"><b>3. Corriente</b><p>Se aplica energía eléctrica controlada.</p></div>
-    <div class="card"><b>4. Calor</b><p>La resistencia genera calor concentrado.</p></div>
-    <div class="card"><b>5. Unión</b><p>El calor funde y une las piezas.</p></div>
-    <div class="card"><b>6. Enfriamiento</b><p>Se consolida el punto de soldadura.</p></div>
-  </div>
-</section>
-
-<!-- EXPORTACION -->
-<section id="exportacion">
-  <div class="export">
-    <div>
-      <h2>Exportamos desde <span>José C. Paz</span> al mundo</h2>
-      <p style="color:#cbd5e1">Fabricamos en Buenos Aires, Argentina. Preparamos tu pedido con embalaje industrial, documentación aduanera y seguimiento puerta a puerta.</p>
-      <div style="margin-top:18px">
-        <p>✅ <b>Envío internacional:</b> DHL / FedEx / Transporte terrestre</p>
-        <p>✅ <b>Documentación:</b> Factura comercial, packing list, certificado de origen</p>
-        <p>✅ <b>Voltaje adaptable:</b> 220V / 110V según país destino</p>
-        <p>✅ <b>Capacitación:</b> Videollamada + manual en español</p>
-        <p>✅ <b>Pago seguro:</b> Transferencia, Mercado Pago, PayPal</p>
-      </div>
-      <div class="paises"><span>🇦🇷 Argentina</span><span>🇨🇱 Chile</span><span>🇺🇾 Uruguay</span><span>🇵🇾 Paraguay</span><span>🇧🇴 Bolivia</span><span>🇵🇪 Perú</span><span>🇧🇷 Brasil</span><span>🇲🇽 México</span></div>
-    </div>
-    <div style="background:#fff;color:#111;border-radius:14px;padding:22px">
-      <h3 style="color:#111">📦 Cotización Exportación</h3>
-      <p style="color:#555;font-size:14px">Respondemos en menos de 24hs. Contanos qué modelo necesitás y a qué país.</p>
-      <p style="margin-top:12px"><b>📍 Origen:</b> José C. Paz, Buenos Aires, Argentina</p>
-      <p><b>📦 Incoterm:</b> FOB Buenos Aires / CIF a consultar</p>
-      <p><b>⏱️ Tiempo de fabricación:</b> 7 a 15 días hábiles</p>
-      <p><b>🚚 Tiempo de envío:</b> 3 a 10 días según país</p>
-  </div>
-</section>
-
-<!-- EQUIPO -->
-<section id="equipo">
-  <h2>Nuestro <span>equipo</span></h2>
-  <p class="sub">10 estudiantes de 7-2 Informática - José C. Paz, Buenos Aires. Cada uno con un rol clave en el proyecto.</p>
-  <div class="equipo">
-    <div class="miembro"><b>Mateo Pucheta</b><span>Software / Control</span><p>Programación de control y lógica del brazo.</p></div>
-    <div class="miembro"><b>Ezequiel Ibarra</b><span>Sistemas / Diseño</span><p>Gestión de datos en Excel y diseño visual.</p></div>
-    <div class="miembro"><b>Mateo Breit</b><span>Fabricación Base</span><p>Programación y base del brazo robótico.</p></div>
-    <div class="miembro"><b>Celeste Duarte</b><span>Documentación</span><p>Gestión documental en Word y análisis en Excel.</p></div>
-    <div class="miembro"><b>Franco Fernández</b><span>Web / 3D</span><p>Desarrollador web HTML y especialista en impresión 3D.</p></div>
-    <div class="miembro"><b>Kevin Paiva</b><span>Impresión 3D</span><p>Prototipado y fabricación de piezas.</p></div>
-    <div class="miembro"><b>Jeremías Martinez</b><span>Mecánica</span><p>Diseño de mecanismos y transmisión.</p></div>
-    <div class="miembro"><b>Joaquín Galeano</b><span>Ingeniería</span><p>Mecanismos y sistemas de transmisión.</p></div>
-    <div class="miembro"><b>Rodrigo Fleitas</b><span>Fabricación</span><p>Base del brazo junto a Mateo y Taiana.</p></div>
-    <div class="miembro"><b>Taiana Nuñez</b><span>Calidad / Fabricación</span><p>Base del brazo y control de calidad.</p></div>
-  </div>
-</section>
-
-<!-- CONTACTO -->
-<section id="contacto">
-  <div class="contacto-box">
-    <div>
-      <h2>¿Querés importar<br><span>nuestro robot?</span></h2>
-      <p>Escribinos y te mandamos catálogo completo, video funcionando y cotización con envío a tu país.</p>
-      <a href="https://instagram.com/armtronic.2026" target="_blank" class="insta-btn">📸 Seguinos en Instagram @armtronic.2026</a>
-      <br>
-      <a href="https://wa.me/5491171538835" target="_blank" class="wsp-btn">💬 WhatsApp: +54 9 11 7153-8835</a>
-    </div>
-    <div>
-      <p><b>📍 Ubicación:</b><br>José C. Paz, Buenos Aires, Argentina</p>
-      <p style="margin-top:12px"><b>📧 Email:</b><br>armtronic2026@gmail.com</p>
-      <p style="margin-top:12px"><b>📸 Instagram:</b><br>@armtronic.2026 - https://instagram.com/armtronic.2026</p>
-      <p style="margin-top:12px"><b>🕒 Horario:</b><br>Lun a Vie 9 a 18hs (Argentina)</p>
-      <p style="margin-top:12px;font-size:12px;color:#888">Respondemos consultas de exportación en menos de 24hs.</p>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p><b>⚡ ARMTRONIC 2026</b> — Fabricado en José C. Paz, Buenos Aires, Argentina • Exportadores de tecnología robótica</p>
-  <p style="margin-top:8px">Instagram: <a href="https://instagram.com/armtronic.2026" target="_blank">@armtronic.2026</a> | Email: armtronic2026@gmail.com </p>
-  <p style="margin-top:8px">© 2026 Armtronic 2026 - Proyecto Escolar 7-2 Informática</p>
-</footer>
-
 </body>
 </html>
-*Qué cambié para que se vea profesional y exportadora:*
-
-- *Topbar verde* que dice que exportan desde José C. Paz
-- *Header fijo* con botón "Cotizar Ahora"
-- *Portada tipo empresa* con stats: precisión, velocidad, 6 ejes
-- *Tabla comparativa* PRO vs LITE con 17 parámetros técnicos detallados
-- *Sección Exportación* con países, Incoterm FOB, documentación aduanera, tiempos de envío
-- *Instagram agregado 4 veces*: hero, contacto, footer y botón con degradado de Instagram
-- *Botón de WhatsApp* directo con mensaje pre-escrito para cotizar exportación
