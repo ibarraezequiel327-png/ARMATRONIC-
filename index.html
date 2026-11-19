@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Armtronic 2026: proyecto de ingeniería y robótica. Desarrollo de un brazo robótico con soldadora de punto de cuatro grados de libertad.">
+<meta name="description" content="ARMTRONIC 2026 - Proyecto de ingeniería, robótica y automatización.">
 <title>ARMTRONIC 2026 | Robótica e Ingeniería</title>
 
 <style>
@@ -59,6 +59,7 @@ header {
   font-size: 23px;
   font-weight: bold;
   letter-spacing: 2px;
+  white-space: nowrap;
 }
 
 .logo span {
@@ -67,7 +68,7 @@ header {
 
 nav {
   display: flex;
-  gap: 20px;
+  gap: 17px;
   flex-wrap: wrap;
 }
 
@@ -100,7 +101,7 @@ section {
 }
 
 h1, h2, h3 {
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
 h2 {
@@ -110,7 +111,7 @@ h2 {
 
 .descripcion {
   color: var(--gris);
-  max-width: 720px;
+  max-width: 750px;
   margin-bottom: 35px;
 }
 
@@ -136,6 +137,7 @@ h2 {
   color: var(--verde);
   border-radius: 6px;
   margin-left: 10px;
+  transition: .3s;
 }
 
 .boton-secundario:hover {
@@ -188,7 +190,7 @@ h2 {
 
 .estadistica strong {
   display: block;
-  font-size: 27px;
+  font-size: 25px;
   color: var(--verde);
 }
 
@@ -233,6 +235,7 @@ h2 {
 .tarjeta p {
   color: var(--gris);
   font-size: 14px;
+  line-height: 1.8;
 }
 
 .imagen-tarjeta {
@@ -357,27 +360,29 @@ td {
   margin-top: 15px;
 }
 
-.equipo {
+.equipo-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
-.integrante {
-  background: var(--tarjeta);
-  padding: 18px 12px;
-  border-radius: 8px;
-  text-align: center;
+#equipo .tarjeta {
+  min-height: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.integrante strong {
-  display: block;
-  font-size: 14px;
+#equipo .etiqueta {
+  display: inline-block;
+  margin-bottom: 13px;
+  letter-spacing: 1px;
+  font-size: 10px;
 }
 
-.integrante span {
-  color: var(--verde);
-  font-size: 11px;
+#equipo .tarjeta p {
+  line-height: 1.8;
+  margin-top: 12px;
 }
 
 details {
@@ -385,6 +390,7 @@ details {
   margin: 12px 0;
   padding: 18px;
   border-radius: 7px;
+  border: 1px solid rgba(255,255,255,.05);
 }
 
 summary {
@@ -411,12 +417,33 @@ details p {
   color: var(--verde);
 }
 
+.contacto .boton {
+  color: #071410;
+}
+
+.tarjeta-instagram {
+  max-width: 550px;
+  margin: 30px auto;
+  border-color: rgba(0,217,173,.4);
+}
+
+.instagram-usuario {
+  font-size: 20px;
+  color: var(--verde) !important;
+  font-weight: bold;
+  margin: 15px 0 !important;
+}
+
 footer {
   background: #070c10;
   padding: 30px 8%;
   text-align: center;
   color: #81909a;
   font-size: 13px;
+}
+
+footer p {
+  margin: 5px;
 }
 
 .volver-inicio {
@@ -432,7 +459,7 @@ footer {
   box-shadow: 0 5px 20px rgba(0,0,0,.3);
 }
 
-@media(max-width: 850px) {
+@media(max-width: 950px) {
   .navbar {
     flex-direction: column;
   }
@@ -449,16 +476,12 @@ footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .equipo {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .estadisticas {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media(max-width: 550px) {
+@media(max-width: 600px) {
   section {
     padding: 65px 6%;
   }
@@ -471,7 +494,7 @@ footer {
     font-size: 12px;
   }
 
-  .grid, .pasos, .galeria {
+  .grid, .pasos, .galeria, .equipo-grid {
     grid-template-columns: 1fr;
   }
 
@@ -490,6 +513,10 @@ footer {
   .destacado {
     padding: 25px;
   }
+
+  .logo {
+    font-size: 21px;
+  }
 }
 </style>
 </head>
@@ -507,7 +534,7 @@ footer {
       <a href="#tecnologia">Tecnología</a>
       <a href="#fabricacion">Fabricación</a>
       <a href="#equipo">Equipo</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#contacto">Instagram</a>
     </nav>
   </div>
 </header>
@@ -566,8 +593,11 @@ footer {
       ARMTRONIC 2026 es un proyecto educativo de ingeniería,
       informática y automatización desarrollado en José C. Paz,
       Buenos Aires, Argentina.
+
       Buscamos aplicar conocimientos técnicos para diseñar,
       construir y poner a prueba soluciones robóticas.
+      Nuestro trabajo combina creatividad, programación,
+      electrónica y fabricación mecánica.
     </p>
 
     <div class="grid">
@@ -577,6 +607,8 @@ footer {
         <p>
           Desarrollar un sistema robótico funcional que permita
           comprender y aplicar los principios de la automatización.
+          Queremos integrar conocimientos de electrónica, mecánica
+          y programación en un mismo proyecto.
         </p>
       </article>
 
@@ -585,7 +617,9 @@ footer {
         <h3>Nuestra visión</h3>
         <p>
           Seguir aprendiendo, mejorando nuestros diseños y explorando
-          nuevas posibilidades dentro de la robótica.
+          nuevas posibilidades dentro de la robótica industrial.
+          Buscamos que nuestro proyecto pueda evolucionar con
+          nuevas funciones y tecnologías.
         </p>
       </article>
 
@@ -595,6 +629,8 @@ footer {
         <p>
           Trabajo en equipo, creatividad, responsabilidad,
           innovación y compromiso con el aprendizaje.
+          Creemos que las mejores soluciones surgen de
+          compartir ideas y trabajar de manera organizada.
         </p>
       </article>
     </div>
@@ -610,9 +646,10 @@ footer {
     <div class="producto">
       <div>
         <p class="descripcion">
-          Brazo robótico con soldadora de punto, diseñado como
-          una propuesta de automatización para realizar movimientos
-          controlados y operaciones de unión de piezas metálicas.
+          El AT-2026 PRO es nuestro desarrollo de brazo robótico
+          con soldadora de punto. Está diseñado como una propuesta
+          de automatización para realizar movimientos controlados
+          y operaciones de unión de piezas metálicas.
         </p>
 
         <ul class="lista">
@@ -621,6 +658,7 @@ footer {
           <li>Movimiento gestionado mediante joysticks.</li>
           <li>Estructura mecánica articulada.</li>
           <li>Sistema de soldadura de punto.</li>
+          <li>Integración de electrónica y mecánica.</li>
           <li>Proyecto desarrollado en equipo.</li>
         </ul>
 
@@ -646,6 +684,8 @@ footer {
       El sistema utiliza controles manuales y componentes
       electrónicos para gestionar los movimientos del brazo
       y ejecutar las operaciones previstas.
+      El operador envía las instrucciones y el controlador
+      procesa las señales para coordinar los movimientos.
     </p>
 
     <div class="pasos">
@@ -655,6 +695,8 @@ footer {
         <p>
           El usuario utiliza los joysticks para indicar los
           movimientos que debe realizar el mecanismo.
+          Cada movimiento genera señales que son enviadas
+          al sistema electrónico.
         </p>
       </article>
 
@@ -663,7 +705,8 @@ footer {
         <h3>Procesamiento</h3>
         <p>
           Arduino recibe las señales de entrada y procesa
-          las instrucciones del sistema.
+          las instrucciones programadas. El código establece
+          cómo deben responder los distintos componentes.
         </p>
       </article>
 
@@ -672,7 +715,8 @@ footer {
         <h3>Movimiento</h3>
         <p>
           Los motores y mecanismos realizan los movimientos
-          correspondientes de las articulaciones.
+          correspondientes de las articulaciones, permitiendo
+          desplazar el brazo de manera controlada.
         </p>
       </article>
 
@@ -681,7 +725,8 @@ footer {
         <h3>Posicionamiento</h3>
         <p>
           El brazo se coloca en la posición necesaria para
-          realizar la operación prevista.
+          realizar la operación prevista, de acuerdo con
+          las instrucciones enviadas por el operador.
         </p>
       </article>
 
@@ -690,7 +735,8 @@ footer {
         <h3>Soldadura</h3>
         <p>
           El sistema de soldadura de punto permite realizar
-          la unión de piezas metálicas mediante corriente eléctrica.
+          la unión de piezas metálicas mediante corriente
+          eléctrica, presión y calor generado por resistencia.
         </p>
       </article>
 
@@ -699,7 +745,8 @@ footer {
         <h3>Verificación</h3>
         <p>
           Se comprueba el resultado y el funcionamiento
-          del conjunto mecánico y electrónico.
+          del conjunto mecánico y electrónico para
+          identificar posibles ajustes o mejoras.
         </p>
       </article>
     </div>
@@ -715,33 +762,42 @@ footer {
     <p class="descripcion">
       El proyecto integra diferentes áreas de la ingeniería:
       electrónica, programación, mecánica y fabricación.
+      Cada componente cumple una función importante
+      para conseguir el funcionamiento del conjunto.
     </p>
 
     <div class="grid">
+
       <article class="tarjeta">
         <div class="icono">💻</div>
         <h3>Arduino</h3>
         <p>
-          Plataforma electrónica programable que procesa
-          las señales y controla el funcionamiento del sistema.
+          Es el cerebro electrónico del proyecto. Recibe las señales
+          de los controles, procesa las instrucciones programadas
+          y coordina las acciones de los motores y demás componentes.
+          Permite adaptar el comportamiento del brazo mediante código.
         </p>
       </article>
 
       <article class="tarjeta">
         <div class="icono">🕹️</div>
-        <h3>Joysticks</h3>
+        <h3>Joysticks de control</h3>
         <p>
-          Dispositivos de entrada utilizados para indicar
-          los movimientos del brazo robótico.
+          Permiten al operador manejar los movimientos del brazo
+          de manera manual. Sus señales analógicas son interpretadas
+          por Arduino para controlar los desplazamientos y facilitar
+          el posicionamiento del mecanismo.
         </p>
       </article>
 
       <article class="tarjeta">
         <div class="icono">⚙️</div>
-        <h3>Motores</h3>
+        <h3>Motores paso a paso</h3>
         <p>
-          Elementos encargados de generar el movimiento
-          de las distintas articulaciones.
+          Son los encargados de producir movimientos controlados
+          en las articulaciones. Reciben señales del sistema de
+          control y permiten realizar desplazamientos de forma
+          organizada y coordinada.
         </p>
       </article>
 
@@ -749,8 +805,10 @@ footer {
         <div class="icono">🔩</div>
         <h3>Estructura mecánica</h3>
         <p>
-          Soporta los componentes y permite organizar
-          los movimientos del mecanismo.
+          Está formada por la base, los brazos y las articulaciones.
+          Su función es sostener los componentes, distribuir las
+          cargas y permitir que el mecanismo alcance diferentes
+          posiciones de trabajo.
         </p>
       </article>
 
@@ -758,19 +816,24 @@ footer {
         <div class="icono">⚡</div>
         <h3>Soldadora de punto</h3>
         <p>
-          Sistema destinado a la unión de piezas metálicas
-          mediante un proceso de soldadura por resistencia.
+          Es el sistema destinado a unir piezas metálicas mediante
+          calor generado por resistencia eléctrica y presión.
+          Su funcionamiento requiere una alimentación adecuada
+          y medidas de protección específicas.
         </p>
       </article>
 
       <article class="tarjeta">
         <div class="icono">🧠</div>
-        <h3>Programación</h3>
+        <h3>Programación y electrónica</h3>
         <p>
-          Código desarrollado para interpretar entradas,
-          controlar motores y coordinar el funcionamiento.
+          El código desarrollado en Arduino IDE establece cómo
+          interpretar los controles y generar las señales necesarias
+          para el movimiento. El cableado conecta los módulos,
+          sensores y actuadores del proyecto.
         </p>
       </article>
+
     </div>
   </div>
 </section>
@@ -781,6 +844,10 @@ footer {
     <span class="etiqueta">Información del producto</span>
     <h2>Ficha técnica.</h2>
 
+    <p class="descripcion">
+      Características generales del desarrollo AT-2026 PRO.
+    </p>
+
     <div class="tabla-contenedor">
       <table>
         <tr>
@@ -790,6 +857,10 @@ footer {
         <tr>
           <td>Nombre del proyecto</td>
           <td>AT-2026 PRO</td>
+        </tr>
+        <tr>
+          <td>Empresa / Equipo</td>
+          <td>ARMTRONIC 2026</td>
         </tr>
         <tr>
           <td>Tipo de sistema</td>
@@ -808,6 +879,10 @@ footer {
           <td>Joysticks</td>
         </tr>
         <tr>
+          <td>Movimiento</td>
+          <td>Articulaciones controladas</td>
+        </tr>
+        <tr>
           <td>Aplicación</td>
           <td>Soldadura de punto</td>
         </tr>
@@ -818,6 +893,10 @@ footer {
         <tr>
           <td>Desarrollo</td>
           <td>Proyecto educativo 2026</td>
+        </tr>
+        <tr>
+          <td>Ubicación</td>
+          <td>José C. Paz, Buenos Aires, Argentina</td>
         </tr>
       </table>
     </div>
@@ -830,111 +909,25 @@ footer {
     <span class="etiqueta">Nuestro proceso</span>
     <h2>De una idea a un proyecto real.</h2>
 
+    <p class="descripcion">
+      El desarrollo requiere organización, planificación,
+      fabricación y pruebas. Cada etapa aporta conocimientos
+      y permite mejorar el resultado final.
+    </p>
+
     <div class="grid">
+
       <article class="tarjeta">
         <img class="imagen-tarjeta"
           src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
           alt="Planificación de ingeniería">
+
         <h3>01. Planificación</h3>
         <p>
-          Definición de objetivos, distribución de tareas
-          y análisis de los componentes necesarios.
+          Definición de objetivos, distribución de tareas,
+          análisis de los componentes necesarios y organización
+          del trabajo entre los integrantes.
         </p>
       </article>
 
-      <article class="tarjeta">
-        <img class="imagen-tarjeta"
-          src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=800&q=80"
-          alt="Trabajo de fabricación">
-        <h3>02. Fabricación</h3>
-        <p>
-          Construcción de la estructura, preparación de
-          mecanismos y montaje de los componentes.
-        </p>
-      </article>
-
-      <article class="tarjeta">
-        <img class="imagen-tarjeta"
-          src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80"
-          alt="Pruebas de ingeniería">
-        <h3>03. Pruebas</h3>
-        <p>
-          Verificación de conexiones, programación,
-          movimientos y funcionamiento general.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- APLICACIONES -->
-<section>
-  <div class="contenedor">
-    <span class="etiqueta">Posibilidades de aplicación</span>
-    <h2>Robótica para distintos sectores.</h2>
-
-    <div class="grid">
-      <article class="tarjeta">
-        <div class="icono">🏭</div>
-        <h3>Industria metalúrgica</h3>
-        <p>
-          Automatización de determinadas operaciones
-          de unión y manipulación de piezas metálicas.
-        </p>
-      </article>
-
-      <article class="tarjeta">
-        <div class="icono">🔧</div>
-        <h3>Talleres técnicos</h3>
-        <p>
-          Aplicación de conceptos de automatización
-          en entornos de fabricación y mantenimiento.
-        </p>
-      </article>
-
-      <article class="tarjeta">
-        <div class="icono">🎓</div>
-        <h3>Educación tecnológica</h3>
-        <p>
-          Aprendizaje práctico de electrónica,
-          programación, mecánica y robótica.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- GALERIA -->
-<section class="fondo-alternativo">
-  <div class="contenedor">
-    <span class="etiqueta">Inspiración tecnológica</span>
-    <h2>Un mundo de ingeniería.</h2>
-
-    <p class="descripcion">
-      Referencias visuales de robótica, automatización
-      y fabricación industrial. Esta galería es ilustrativa;
-      se puede reemplazar por fotografías reales del proyecto.
-    </p>
-
-    <div class="galeria">
-      <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=800&q=80" alt="Entorno industrial">
-      <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Ingeniería tecnológica">
-      <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80" alt="Trabajo técnico">
-    </div>
-  </div>
-</section>
-
-<!-- FUTURO -->
-<section>
-  <div class="contenedor">
-    <div class="destacado">
-      <span class="etiqueta">Mirando hacia adelante</span>
-      <h2>El futuro de ARMTRONIC.</h2>
-
-      <p>
-        Nuestro proyecto representa un punto de partida.
-        Queremos continuar perfeccionando el diseño,
-        mejorar la precisión de los movimientos, optimizar
-        el sistema de control y explorar nuevas aplicaciones
-        de la automatización.
-      </p
+      <article class="tarjet
