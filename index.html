@@ -3,387 +3,292 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="ARMTRONIC 2026 - Proyecto de ingeniería, robótica y automatización.">
-<title>ARMTRONIC 2026 | Robótica e Ingeniería</title>
+<title>ARMTRONIC 2026 | Robótica y Soldadura</title>
 
 <style>
-:root{--verde:#00d9ad;--azul:#168eea;--fondo:#0b1117;--fondo2:#101a23;--tarjeta:#14232e;--texto:#f1f5f7;--gris:#aab8c2}
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--fondo);color:var(--texto);line-height:1.7}
-a{text-decoration:none;color:inherit}
-header{position:sticky;top:0;z-index:1000;background:rgba(11,17,23,.96);border-bottom:1px solid rgba(0,217,173,.2);backdrop-filter:blur(12px)}
-.navbar{max-width:1200px;margin:auto;padding:15px 25px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.logo{font-size:23px;font-weight:bold;letter-spacing:2px;white-space:nowrap}
-.logo span{color:var(--verde)}
-nav{display:flex;gap:17px;flex-wrap:wrap}
-nav a{color:var(--gris);font-size:13px;transition:.3s}
-nav a:hover{color:var(--verde)}
-section{padding:85px 8%;scroll-margin-top:75px}
-.contenedor{max-width:1200px;margin:auto}
-.etiqueta{color:var(--verde);font-size:12px;font-weight:bold;letter-spacing:3px;text-transform:uppercase}
-h1,h2,h3{line-height:1.3}
-h2{font-size:clamp(28px,4vw,40px);margin:12px 0 20px}
-.descripcion{color:var(--gris);max-width:750px;margin-bottom:35px}
-.boton{display:inline-block;padding:13px 23px;border-radius:6px;background:var(--verde);color:#071410;font-weight:bold;transition:.3s}
-.boton:hover{background:#38f4cb;transform:translateY(-3px)}
-.boton-secundario{display:inline-block;padding:12px 22px;border:1px solid var(--verde);color:var(--verde);border-radius:6px;margin-left:10px;transition:.3s}
-.boton-secundario:hover{background:rgba(0,217,173,.1)}
-.hero{min-height:620px;display:flex;align-items:center;background:linear-gradient(90deg,rgba(11,17,23,.97),rgba(11,17,23,.72)),url("https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1800&q=85") center/cover}
-.hero-contenido{max-width:850px}
-.hero h1{font-size:clamp(38px,7vw,70px);margin:18px 0}
-.hero h1 span{color:var(--verde)}
-.hero p{color:#c0cbd2;font-size:17px;max-width:650px;margin-bottom:30px}
-.estadisticas{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:55px}
-.estadistica{padding:18px;background:rgba(20,35,46,.8);border:1px solid rgba(0,217,173,.2);border-radius:9px}
-.estadistica strong{display:block;font-size:25px;color:var(--verde)}
-.estadistica span{color:var(--gris);font-size:12px}
-.fondo-alternativo{background:var(--fondo2)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.tarjeta{background:var(--tarjeta);padding:25px;border:1px solid rgba(255,255,255,.06);border-radius:10px;transition:.3s}
-.tarjeta:hover{transform:translateY(-5px);border-color:rgba(0,217,173,.5)}
-.icono{font-size:32px;margin-bottom:12px}
-.tarjeta h3{margin-bottom:12px;font-size:19px}
-.tarjeta p{color:var(--gris);font-size:14px;line-height:1.8}
-.imagen-tarjeta{width:100%;height:190px;object-fit:cover;border-radius:7px;margin-bottom:17px}
-.producto{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
-.producto img{width:100%;border-radius:12px;border:1px solid rgba(0,217,173,.2)}
-.lista{list-style:none;margin:20px 0}
-.lista li{padding:9px 0;border-bottom:1px solid rgba(255,255,255,.08);color:var(--gris)}
-.lista li::before{content:"✓";color:var(--verde);margin-right:10px;font-weight:bold}
-.pasos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.paso{background:var(--tarjeta);padding:25px;border-radius:9px;border-top:3px solid var(--verde)}
-.numero{color:var(--verde);font-size:30px;font-weight:bold;margin-bottom:10px}
-.paso p{color:var(--gris);font-size:14px;margin-top:10px}
-.tabla-contenedor{overflow-x:auto}
-table{width:100%;border-collapse:collapse;background:var(--tarjeta);border-radius:8px;overflow:hidden}
-td,th{padding:16px;text-align:left;border-bottom:1px solid rgba(255,255,255,.08)}
-th{color:var(--verde);background:#192b36}
-td{color:var(--gris)}
-.galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.galeria img{width:100%;height:230px;object-fit:cover;border-radius:9px;transition:.3s}
-.galeria img:hover{transform:scale(1.025)}
-.destacado{background:linear-gradient(110deg,#103c38,#122d43);padding:45px;border-radius:12px;border:1px solid rgba(0,217,173,.2)}
-.destacado p{color:#c5d4dc;margin-top:15px}
-.equipo-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-#equipo .tarjeta{min-height:190px;display:flex;flex-direction:column;align-items:flex-start}
-#equipo .etiqueta{display:inline-block;margin-bottom:13px;letter-spacing:1px;font-size:10px}
-#equipo .tarjeta p{line-height:1.8;margin-top:12px}
-details{background:var(--tarjeta);margin:12px 0;padding:18px;border-radius:7px;border:1px solid rgba(255,255,255,.05)}
-summary{cursor:pointer;font-weight:bold}
-details p{color:var(--gris);margin-top:12px}
-.contacto{text-align:center;background:linear-gradient(120deg,#102a32,#101c2b)}
-.contacto p{color:var(--gris);margin:12px 0 25px}
-.contacto a{color:var(--verde)}
-.contacto .boton{color:#071410}
-.tarjeta-instagram{max-width:550px;margin:30px auto;border-color:rgba(0,217,173,.4)}
-.instagram-usuario{font-size:20px;color:var(--verde)!important;font-weight:bold;margin:15px 0!important}
-.exportacion{display:grid;grid-template-columns:1.2fr .8fr;gap:25px;background:linear-gradient(90deg,#003a33,#071a2a);border:1px solid rgba(0,217,173,.3);padding:30px;border-radius:15px}
-.exportacion p{color:#cbd5e1}
-.paises{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
-.paises span{background:#fff;color:#000;padding:6px 12px;border-radius:30px;font-size:13px;font-weight:bold}
-.cotizacion{background:#fff;color:#111;border-radius:14px;padding:22px}
-.cotizacion p{color:#444;margin:10px 0}
-footer{background:#070c10;padding:30px 8%;text-align:center;color:#81909a;font-size:13px}
-footer p{margin:5px}
-footer a{color:var(--verde)}
-.volver-inicio{position:fixed;bottom:22px;right:22px;z-index:999;background:var(--verde);color:#071410;padding:12px 17px;border-radius:7px;font-weight:bold;box-shadow:0 5px 20px rgba(0,0,0,.3)}
-.pedido-panel{background:linear-gradient(120deg,#102a32,#101c2b);border:1px solid rgba(0,217,173,.25);border-radius:14px;padding:28px;margin:25px 0}
-.estado-pedido{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
-.estado{background:var(--tarjeta);padding:18px;border-radius:10px;border-top:3px solid var(--verde)}
-.estado b{color:var(--verde);display:block;margin-bottom:8px}
-.precio-card{background:var(--tarjeta);border:1px solid rgba(0,217,173,.22);border-radius:12px;padding:25px}
-.precio-card h3{margin-bottom:10px}
-.precio-grande{font-size:26px;color:var(--verde);font-weight:bold;margin:12px 0}
-.destinos{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:20px}
-.destino{padding:18px;background:var(--tarjeta);border:1px solid rgba(255,255,255,.06);border-radius:10px}
-.destino b{color:var(--verde)}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+:root{--verde:#00ffc6;--azul:#00a8ff;--oscuro:#0b1117;--card:#111e28}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{background:var(--oscuro);color:white;line-height:1.6}
+a{color:var(--verde);text-decoration:none}
 
-@media(max-width:950px){
-.estado-pedido,.destinos{grid-template-columns:repeat(2,1fr)}
-.navbar{flex-direction:column}
-.producto,.exportacion{grid-template-columns:1fr}
-.grid,.pasos{grid-template-columns:repeat(2,1fr)}
-.estadisticas{grid-template-columns:repeat(2,1fr)}
+.topbar{background:var(--verde);color:#000;text-align:center;padding:9px;font-weight:800;font-size:13px}
+
+header{position:sticky;top:0;z-index:100;background:rgba(5,10,15,.95);display:flex;justify-content:space-between;align-items:center;padding:14px 5%;border-bottom:1px solid #222}
+.logo{font-size:23px;font-weight:900;color:var(--verde)}
+.logo span{color:white;font-size:12px;display:block;font-weight:400}
+nav{display:flex;gap:15px;flex-wrap:wrap;align-items:center}
+nav a{color:#ddd;font-size:14px;font-weight:600}
+nav a:hover{color:var(--verde)}
+.btn{background:var(--verde);color:#000!important;padding:10px 18px;border-radius:30px;font-weight:800;display:inline-block}
+.btn-outline{border:1px solid var(--verde);padding:9px 16px;border-radius:30px;display:inline-block}
+
+.portada{min-height:92vh;display:flex;align-items:center;padding:50px 5%;background:radial-gradient(circle at 70% 20%,rgba(0,255,198,.25),transparent 40%),radial-gradient(circle at 10% 90%,rgba(0,168,255,.25),transparent 40%),#071019}
+.portada-grid{max-width:1150px;width:100%;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.badge{display:inline-block;background:rgba(0,255,198,.15);border:1px solid var(--verde);color:var(--verde);padding:6px 12px;border-radius:30px;font-size:12px;font-weight:800;margin-bottom:15px}
+.portada h1{font-size:clamp(38px,6vw,68px);line-height:1;margin-bottom:18px}
+.portada h1 em{color:var(--verde);font-style:normal}
+.lead{font-size:19px;color:#cbd5e1;margin-bottom:22px}
+.botones{display:flex;gap:12px;flex-wrap:wrap}
+.stats{display:flex;gap:15px;flex-wrap:wrap;margin:25px 0}
+.stat{background:#0f1e2b;border:1px solid #1e3445;padding:14px 18px;border-radius:12px;min-width:130px}
+.stat b{font-size:24px;color:var(--verde);display:block}
+.stat span{font-size:12px;color:#94a3b8}
+.hero-card{background:linear-gradient(180deg,#132a38,#0a151f);border:1px solid #1e3a4a;border-radius:20px;padding:28px;text-align:center;box-shadow:0 20px 60px #0008}
+.hero-card .big{font-size:90px}
+.hero-card p{color:#94a3b8;font-size:14px}
+.precio{font-size:27px;color:var(--verde);font-weight:900;margin:15px 0}
+
+section{padding:70px 5%;max-width:1150px;margin:auto}
+section h2{font-size:32px;margin-bottom:8px}
+section h2 span{color:var(--verde)}
+.sub{color:#94a3b8;margin-bottom:30px;max-width:750px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:var(--card);padding:22px;border-radius:16px;border:1px solid #1e3445;transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:var(--verde)}
+.card h3{margin-bottom:8px}
+.card p{color:#cbd5e1;font-size:14.5px}
+.icon{font-size:30px;margin-bottom:10px}
+.verde{border-top:4px solid var(--verde)}
+.azul{border-top:4px solid var(--azul)}
+
+.table-container{overflow-x:auto;border-radius:14px}
+table{width:100%;min-width:550px;border-collapse:collapse;background:#0f1c28;font-size:14px}
+th{background:var(--verde);color:#000;text-align:left;padding:14px}
+td{padding:12px 14px;border-bottom:1px solid #1e3445}
+td:first-child{font-weight:700}
+.subtitulo{margin:35px 0 15px;font-size:21px}
+
+.export{background:linear-gradient(90deg,#003a33,#071a2a);border:1px solid var(--verde);border-radius:20px;padding:30px;display:grid;grid-template-columns:1.2fr .8fr;gap:25px}
+.export p{color:#cbd5e1}
+.paises{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+.paises span{background:white;color:#000;padding:6px 12px;border-radius:30px;font-size:13px;font-weight:700}
+.cotizacion{background:white;color:#111;border-radius:14px;padding:22px}
+.cotizacion p{color:#444;margin-top:10px}
+
+.equipo{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.miembro{background:var(--card);border-radius:14px;padding:18px;border-left:4px solid var(--verde)}
+.miembro b{display:block}
+.miembro span{font-size:13px;color:var(--verde);font-weight:700}
+.miembro p{font-size:13px;color:#94a3b8;margin-top:6px}
+
+.contacto-box{background:white;color:#111;border-radius:20px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.contacto-box h2{color:#111}
+.contacto-box h2 span{color:#00a8a8}
+.contacto-box p{color:#444}
+.insta-btn{display:inline-flex;align-items:center;background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);color:white!important;padding:13px 20px;border-radius:12px;font-weight:800;margin-top:12px}
+
+footer{background:#05080b;text-align:center;padding:30px;color:#64748b;font-size:13px}
+footer b{color:white}
+
+.volver-inicio{position:fixed;bottom:25px;right:25px;z-index:999;background:var(--verde);color:#000!important;padding:13px 20px;border-radius:30px;font-weight:800;box-shadow:0 5px 20px #00ffc64d;transition:.3s}
+.volver-inicio:hover{transform:translateY(-5px);background:var(--azul)}
+
+@media(max-width:820px){
+.portada-grid,.export,.contacto-box{grid-template-columns:1fr}
+header{flex-direction:column;gap:12px}
+nav{justify-content:center}
 }
-@media(max-width:600px){
-.estado-pedido,.destinos{grid-template-columns:1fr}
-section{padding:65px 6%}
-nav{gap:12px;justify-content:center}
+@media(max-width:480px){
+nav{gap:10px}
 nav a{font-size:12px}
-.grid,.pasos,.galeria,.equipo-grid{grid-template-columns:1fr}
-.hero{min-height:570px}
-.hero h1{font-size:39px}
-.boton-secundario{margin:12px 0 0}
-.destacado{padding:25px}
-.logo{font-size:21px}
-.exportacion{padding:20px}
+section h2{font-size:27px}
+.volver-inicio{bottom:15px;right:15px;padding:11px 16px;font-size:13px}
 }
 </style>
 </head>
 
 <body id="inicio">
 
-<header>
-<div class="navbar">
-<a href="#inicio" class="logo">ARM<span>TRONIC</span> 2026</a>
-<nav>
-<a href="#inicio">Inicio</a>
-<a href="#empresa">Empresa</a>
-<a href="#producto">Proyecto</a>
-<a href="#tecnologia">Tecnología</a>
-<a href="#fabricacion">Fabricación</a>
-<a href="#exportacion">Exportación</a>
-<a href="#pedidos">Pedidos y precios</a>
-<a href="#equipo">Equipo</a>
-<a href="#contacto">Instagram</a>
-</nav>
+<div class="topbar">
+🌎 ARMTRONIC 2026 • JOSÉ C. PAZ, BUENOS AIRES, ARGENTINA
 </div>
+
+<header>
+<div class="logo">ARMTRONIC<span>2026 • ROBOTICS & WELDING</span></div>
+<nav>
+<a href="#nosotros">Nosotros</a>
+<a href="#producto">Producto</a>
+<a href="#especificaciones">Ficha Técnica</a>
+<a href="#exportacion">Exportación</a>
+<a href="#equipo">Equipo</a>
+<a href="#contacto" class="btn">Contactar</a>
+</nav>
 </header>
 
-<section class="hero">
-<div class="contenedor hero-contenido">
-<span class="etiqueta">Ingeniería · Automatización · Robótica</span>
-<h1>Diseñamos el futuro de la <span>robótica industrial.</span></h1>
-<p>Somos ARMTRONIC 2026, un equipo de estudiantes dedicado al desarrollo de soluciones tecnológicas. Nuestro proyecto consiste en un brazo robótico con soldadora de punto, controlado mediante Arduino.</p>
-<a href="#producto" class="boton">Conocer el proyecto</a>
-<a href="#contacto" class="boton-secundario">Contactarnos</a>
-<div class="estadisticas">
-<div class="estadistica"><strong>4</strong><span>Grados de libertad</span></div>
-<div class="estadistica"><strong>2026</strong><span>Proyecto tecnológico</span></div>
-<div class="estadistica"><strong>Arduino</strong><span>Sistema de control</span></div>
-<div class="estadistica"><strong>10</strong><span>Integrantes</span></div>
-</div>
-</div>
-</section>
-
-<section id="empresa">
-<div class="contenedor">
-<span class="etiqueta">Quiénes somos</span>
-<h2>Innovación construida en equipo.</h2>
-<p class="descripcion">ARMTRONIC 2026 es un proyecto educativo de ingeniería, informática y automatización desarrollado en José C. Paz, Buenos Aires, Argentina. Buscamos aplicar conocimientos técnicos para diseñar, construir y poner a prueba soluciones robóticas. Nuestro trabajo combina creatividad, programación, electrónica y fabricación mecánica.</p>
-<div class="grid">
-<article class="tarjeta">
-<div class="icono">🎯</div>
-<h3>Nuestra misión</h3>
-<p>Desarrollar un sistema robótico funcional que permita comprender y aplicar los principios de la automatización. Integramos electrónica, mecánica y programación.</p>
-</article>
-<article class="tarjeta">
-<div class="icono">🔭</div>
-<h3>Nuestra visión</h3>
-<p>Seguir aprendiendo, mejorando nuestros diseños y explorando nuevas posibilidades dentro de la robótica industrial.</p>
-</article>
-<article class="tarjeta">
-<div class="icono">🤝</div>
-<h3>Nuestros valores</h3>
-<p>Trabajo en equipo, creatividad, responsabilidad, innovación y compromiso con el aprendizaje. Creemos que las mejores soluciones surgen al compartir ideas.</p>
-</article>
-</div>
-</div>
-</section>
-
-<section id="producto" class="fondo-alternativo">
-<div class="contenedor">
-<span class="etiqueta">Nuestro desarrollo</span>
-<h2>AT-2026 PRO</h2>
-<div class="producto">
+<!-- PORTADA -->
+<div class="portada">
+<div class="portada-grid">
 <div>
-<p class="descripcion">El AT-2026 PRO es nuestro desarrollo de brazo robótico con soldadora de punto. Está diseñado como una propuesta de automatización para realizar movimientos controlados y operaciones de unión de piezas metálicas.</p>
-<ul class="lista">
-<li>Cuatro grados de libertad.</li>
-<li>Control electrónico mediante Arduino.</li>
-<li>Movimiento gestionado mediante joysticks.</li>
-<li>Estructura mecánica articulada.</li>
-<li>Sistema de soldadura de punto.</li>
-<li>Integración de electrónica y mecánica.</li>
-<li>Proyecto desarrollado en equipo.</li>
-</ul>
-<a href="#tecnologia" class="boton">Ver tecnología</a>
+<span class="badge">● PROYECTO ARGENTINO DE ROBÓTICA</span>
+<h1>Brazos Robóticos<br><em>con Soldadora<br>de Punto</em></h1>
+<p class="lead">Automatización industrial desarrollada en <b>José C. Paz, Buenos Aires</b>. Innovación, tecnología y precisión aplicadas a la industria.</p>
+<div class="botones">
+<a href="#contacto" class="btn">📦 Consultar proyecto</a>
+<a href="#especificaciones" class="btn-outline">Ver ficha técnica →</a>
 </div>
-<div>
-<img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1000&q=85" alt="Equipamiento industrial">
+<div class="stats">
+<div class="stat"><b>4 GDL</b><span>Grados de libertad</span></div>
+<div class="stat"><b>Arduino</b><span>Sistema de control</span></div>
+<div class="stat"><b>Robótica</b><span>Automatización</span></div>
+<div class="stat"><b>2026</b><span>Proyecto tecnológico</span></div>
+</div>
+<p style="font-size:13px;color:#94a3b8">📍 José C. Paz, Buenos Aires, Argentina</p>
+</div>
+
+<div class="hero-card">
+<div class="big">🦾</div>
+<h3>ARMTRONIC AT-2026 PRO</h3>
+<p>Brazo robótico articulado de cuatro grados de libertad, desarrollado para aplicaciones de automatización y soldadura de punto.</p>
+<div class="precio">Consultar proyecto</div>
+<small>Desarrollo tecnológico argentino</small><br><br>
+<a href="https://www.instagram.com/armtronic.2026/" target="_blank" class="insta-btn">📸 @armtronic.2026</a>
 </div>
 </div>
+</div>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+<h2>Quiénes <span>somos</span></h2>
+<p class="sub">Somos <b>Armtronic 2026</b>, empresa escolar innovadora de <b>7-2 Informática</b> de José C. Paz. Diseñamos y desarrollamos soluciones de robótica, automatización y soldadura de punto. Nuestra misión es acercar la tecnología al mundo.</p>
+<div class="grid3">
+<div class="card verde"><div class="icon">🎯</div><h3>Misión</h3><p>Demostrar cómo la robótica aplicada puede mejorar la precisión, seguridad y eficiencia de los procesos industriales mediante soluciones tecnológicas.</p></div>
+<div class="card azul"><div class="icon">👁️</div><h3>Visión</h3><p>Ser referentes en automatización y robótica, inspirando a futuros estudiantes a desarrollar soluciones que transformen la industria.</p></div>
+<div class="card verde"><div class="icon">🌎</div><h3>Proyección internacional</h3><p>Proyectamos llevar nuestros desarrollos tecnológicos desde Buenos Aires hacia distintos mercados de Argentina y Latinoamérica.</p></div>
 </div>
 </section>
 
-<section>
-<div class="contenedor">
-<span class="etiqueta">Funcionamiento</span>
-<h2>¿Cómo funciona nuestro brazo robótico?</h2>
-<p class="descripcion">El sistema utiliza controles manuales y componentes electrónicos para gestionar los movimientos del brazo y ejecutar las operaciones previstas. El operador envía instrucciones y el controlador procesa las señales para coordinar los movimientos.</p>
-<div class="pasos">
-<article class="paso"><div class="numero">01</div><h3>Control del operador</h3><p>El usuario utiliza los joysticks para indicar los movimientos. Cada movimiento genera señales que se envían al sistema electrónico.</p></article>
-<article class="paso"><div class="numero">02</div><h3>Procesamiento</h3><p>Arduino recibe las señales de entrada y procesa las instrucciones programadas para establecer cómo responden los componentes.</p></article>
-<article class="paso"><div class="numero">03</div><h3>Movimiento</h3><p>Los motores y mecanismos realizan los movimientos correspondientes de las articulaciones de forma controlada.</p></article>
-<article class="paso"><div class="numero">04</div><h3>Posicionamiento</h3><p>El brazo se coloca en la posición necesaria para realizar la operación prevista, de acuerdo con las instrucciones del operador.</p></article>
-<article class="paso"><div class="numero">05</div><h3>Soldadura</h3><p>La soldadura de punto une piezas metálicas mediante corriente eléctrica, presión y calor generado por resistencia.</p></article>
-<article class="paso"><div class="numero">06</div><h3>Verificación</h3><p>Se comprueba el resultado y el funcionamiento del conjunto mecánico y electrónico para identificar ajustes o mejoras.</p></article>
-</div>
+<!-- PRODUCTO -->
+<section id="producto">
+<h2>Qué <span>hacemos</span></h2>
+<p class="sub">Desarrollamos un brazo robótico articulado de cuatro grados de libertad, orientado a la automatización de movimientos y procesos de soldadura de punto.</p>
+<div class="grid4">
+<div class="card"><div class="icon">🦾</div><h3>Brazo Robótico</h3><p>Sistema mecánico articulado con cuatro grados de libertad para realizar movimientos controlados.</p></div>
+<div class="card"><div class="icon">⚡</div><h3>Soldadura de Punto</h3><p>Sistema destinado a realizar uniones de piezas metálicas mediante presión y corriente eléctrica.</p></div>
+<div class="card"><div class="icon">🎮</div><h3>Control Manual</h3><p>Control de movimientos mediante joysticks y sistemas electrónicos programables.</p></div>
+<div class="card"><div class="icon">🏭</div><h3>Automatización</h3><p>Desarrollo de secuencias de movimientos repetitivos para aplicaciones industriales.</p></div>
 </div>
 </section>
 
-<section id="tecnologia" class="fondo-alternativo">
-<div class="contenedor">
-<span class="etiqueta">Ingeniería aplicada</span>
-<h2>Tecnología y componentes.</h2>
-<p class="descripcion">El proyecto integra electrónica, programación, mecánica y fabricación. Cada componente cumple una función para conseguir el funcionamiento del conjunto.</p>
-<div class="grid">
-<article class="tarjeta"><div class="icono">💻</div><h3>Arduino</h3><p>Recibe las señales de los controles, procesa las instrucciones programadas y coordina las acciones de los motores y otros componentes.</p></article>
-<article class="tarjeta"><div class="icono">🕹️</div><h3>Joysticks de control</h3><p>Permiten manejar manualmente los movimientos. Sus señales son interpretadas por Arduino para controlar desplazamientos y posicionamiento.</p></article>
-<article class="tarjeta"><div class="icono">⚙️</div><h3>Motores paso a paso</h3><p>Producen movimientos controlados en las articulaciones, siguiendo las señales del sistema de control.</p></article>
-<article class="tarjeta"><div class="icono">🔩</div><h3>Estructura mecánica</h3><p>Base, brazos y articulaciones sostienen los componentes, distribuyen las cargas y permiten diferentes posiciones de trabajo.</p></article>
-<article class="tarjeta"><div class="icono">⚡</div><h3>Soldadora de punto</h3><p>Sistema destinado a unir piezas metálicas mediante calor por resistencia eléctrica y presión. Requiere alimentación adecuada y protecciones específicas.</p></article>
-<article class="tarjeta"><div class="icono">🧠</div><h3>Programación y electrónica</h3><p>El código en Arduino IDE interpreta los controles y genera señales para el movimiento. El cableado conecta módulos, sensores y actuadores.</p></article>
-</div>
-</div>
-</section>
+<!-- FICHA TÉCNICA -->
+<section id="especificaciones">
+<h2>Ficha Técnica <span>AT-2026 PRO</span></h2>
+<p class="sub">Características generales del desarrollo robótico Armtronic 2026.</p>
 
-<section>
-<div class="contenedor">
-<span class="etiqueta">Información del producto</span>
-<h2>Ficha técnica.</h2>
-<p class="descripcion">Características generales del desarrollo AT-2026 PRO.</p>
-<div class="tabla-contenedor">
+<div class="table-container">
 <table>
-<tr><th>Característica</th><th>Descripción</th></tr>
-<tr><td>Nombre</td><td>AT-2026 PRO</td></tr>
-<tr><td>Equipo</td><td>ARMTRONIC 2026</td></tr>
-<tr><td>Tipo de sistema</td><td>Brazo robótico articulado</td></tr>
-<tr><td>Grados de libertad</td><td>4</td></tr>
-<tr><td>Controlador</td><td>Arduino</td></tr>
-<tr><td>Interfaz</td><td>Joysticks</td></tr>
+<tr><th>Parámetro</th><th>AT-2026 PRO</th></tr>
+<tr><td>Tipo de equipo</td><td>Brazo robótico articulado</td></tr>
+<tr><td>Grados de libertad</td><td>4 GDL</td></tr>
+<tr><td>Sistema de control</td><td>Arduino</td></tr>
+<tr><td>Control de movimiento</td><td>Joysticks</td></tr>
+<tr><td>Movimiento</td><td>Articulaciones controladas</td></tr>
 <tr><td>Aplicación</td><td>Automatización y soldadura de punto</td></tr>
+<tr><td>Estructura</td><td>Sistema mecánico articulado</td></tr>
+<tr><td>Fabricación</td><td>Componentes mecánicos y piezas desarrolladas</td></tr>
 <tr><td>Programación</td><td>Arduino IDE</td></tr>
-<tr><td>Desarrollo</td><td>Proyecto educativo 2026</td></tr>
-<tr><td>Ubicación</td><td>José C. Paz, Buenos Aires, Argentina</td></tr>
+<tr><td>Proyecto</td><td>Armtronic 2026</td></tr>
 </table>
 </div>
 
-<h3 style="margin:35px 0 15px">🔨 Etapas del proceso de soldadura</h3>
-<div class="grid">
-<article class="tarjeta"><h3>1. Posicionamiento</h3><p>Se colocan las piezas metálicas en la posición adecuada.</p></article>
-<article class="tarjeta"><h3>2. Presión</h3><p>Los electrodos mantienen las piezas en contacto.</p></article>
-<article class="tarjeta"><h3>3. Corriente</h3><p>Se aplica energía eléctrica controlada.</p></article>
-<article class="tarjeta"><h3>4. Calentamiento</h3><p>La resistencia eléctrica genera calor en la zona de unión.</p></article>
-<article class="tarjeta"><h3>5. Unión</h3><p>Se forma el punto de soldadura entre las piezas.</p></article>
-<article class="tarjeta"><h3>6. Enfriamiento</h3><p>El material se solidifica y consolida la unión.</p></article>
+<h3 class="subtitulo">🔧 Partes principales</h3>
+<div class="grid4">
+<div class="card"><h3>🦾 Estructura</h3><p>Soporte mecánico del brazo robótico y sus articulaciones.</p></div>
+<div class="card"><h3>⚙️ Motores</h3><p>Proporcionan el movimiento de las articulaciones.</p></div>
+<div class="card"><h3>🎮 Joysticks</h3><p>Permiten controlar manualmente los movimientos.</p></div>
+<div class="card"><h3>💻 Arduino</h3><p>Procesa las señales y controla los movimientos programados.</p></div>
+<div class="card"><h3>⚡ Soldadora</h3><p>Sistema destinado a generar la unión de las piezas metálicas.</p></div>
+<div class="card"><h3>🔌 Cableado</h3><p>Conecta los componentes electrónicos del sistema.</p></div>
+<div class="card"><h3>🛠️ Mecanismos</h3><p>Transmiten el movimiento entre motores y articulaciones.</p></div>
+<div class="card"><h3>🧠 Control</h3><p>Coordina las órdenes y secuencias del brazo.</p></div>
 </div>
+
+<h3 class="subtitulo">🔨 Etapas del proceso de soldadura</h3>
+<div class="grid3">
+<div class="card"><h3>1. Posicionamiento</h3><p>Se colocan las piezas metálicas en la posición adecuada.</p></div>
+<div class="card"><h3>2. Presión</h3><p>Los electrodos mantienen las piezas en contacto.</p></div>
+<div class="card"><h3>3. Corriente</h3><p>Se aplica energía eléctrica controlada.</p></div>
+<div class="card"><h3>4. Calentamiento</h3><p>La resistencia eléctrica genera calor en la unión.</p></div>
+<div class="card"><h3>5. Unión</h3><p>Se forma el punto de soldadura entre las piezas.</p></div>
+<div class="card"><h3>6. Enfriamiento</h3><p>El material se solidifica y consolida la unión.</p></div>
 </div>
 </section>
 
-<section id="fabricacion" class="fondo-alternativo">
-<div class="contenedor">
-<span class="etiqueta">Nuestro proceso</span>
-<h2>De una idea a un proyecto real.</h2>
-<p class="descripcion">El desarrollo requiere organización, planificación, fabricación y pruebas. Cada etapa aporta conocimientos y permite mejorar el resultado final.</p>
-<div class="grid">
-<article class="tarjeta"><img class="imagen-tarjeta" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Planificación de ingeniería"><h3>01. Planificación</h3><p>Definición de objetivos, distribución de tareas, análisis de componentes y organización del trabajo entre integrantes.</p></article>
-<article class="tarjeta"><img class="imagen-tarjeta" src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Diseño técnico"><h3>02. Diseño</h3><p>Diseño y revisión de la estructura, mecanismos y componentes para definir cómo se construirá el brazo.</p></article>
-<article class="tarjeta"><img class="imagen-tarjeta" src="https://images.unsplash.com/photo-1581092335397-9fa3419e6d0b?auto=format&fit=crop&w=800&q=80" alt="Fabricación de prototipo"><h3>03. Fabricación</h3><p>Preparación y fabricación de piezas, armado de la estructura y montaje de los componentes mecánicos.</p></article>
-<article class="tarjeta"><img class="imagen-tarjeta" src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80" alt="Electrónica"><h3>04. Integración</h3><p>Conexión del sistema de control, motores, sensores, alimentación y cableado.</p></article>
-<article class="tarjeta"><img class="imagen-tarjeta" src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=800&q=80" alt="Programación"><h3>05. Programación</h3><p>Desarrollo, revisión y ajuste del código para controlar los movimientos del brazo.</p></article>
-<article class="tarjeta"><img class="imagen-tarjeta" src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=800&q=80" alt="Pruebas de ingeniería"><h3>06. Pruebas y mejoras</h3><p>Evaluación del funcionamiento, identificación de problemas y ajustes para mejorar el prototipo.</p></article>
-</div>
-</div>
-</section>
-
+<!-- EXPORTACIÓN -->
 <section id="exportacion">
-<div class="contenedor">
-<span class="etiqueta">Proyección</span>
-<h2>Desde José C. Paz hacia <span style="color:var(--verde)">nuevos horizontes.</span></h2>
-<div class="exportacion">
+<div class="export">
 <div>
-<p>Desarrollamos nuestro proyecto en Buenos Aires, Argentina, con una mirada puesta en la tecnología y en la posibilidad de compartir nuestras ideas con distintos sectores.</p><br>
-<p>✓ Desarrollo de tecnología robótica.</p>
-<p>✓ Diseño y fabricación de prototipos.</p>
-<p>✓ Documentación técnica del proyecto.</p>
-<p>✓ Presentación y asesoramiento sobre su funcionamiento.</p>
-<p>✓ Proyección hacia mercados regionales.</p>
+<h2>Proyección desde <span>José C. Paz</span></h2>
+<p>Desarrollamos nuestro proyecto en Buenos Aires, Argentina, con el objetivo de llevar soluciones tecnológicas a distintos sectores industriales.</p>
+<br>
+<p>✅ Desarrollo de tecnología robótica.</p>
+<p>✅ Diseño y fabricación de prototipos.</p>
+<p>✅ Documentación técnica del proyecto.</p>
+<p>✅ Asesoramiento sobre el funcionamiento.</p>
+<p>✅ Proyección hacia mercados internacionales.</p>
 <div class="paises">
-<span>🇦🇷 Argentina</span><span>🇨🇱 Chile</span>
-<span>🇺🇾 Uruguay</span><span>🇵🇾 Paraguay</span>
-<span>🇧🇴 Bolivia</span><span>🇵🇪 Perú</span>
-<span>🇧🇷 Brasil</span><span>🇲🇽 México</span>
+<span>🇦🇷 Argentina</span><span>🇨🇱 Chile</span><span>🇺🇾 Uruguay</span><span>🇵🇾 Paraguay</span><span>🇧🇴 Bolivia</span><span>🇵🇪 Perú</span><span>🇧🇷 Brasil</span><span>🇲🇽 México</span>
 </div>
 </div>
+
 <div class="cotizacion">
-<h3>📦 Consultas</h3>
-<p>Contactanos para conocer el proyecto, sus características y posibilidades de desarrollo.</p>
+<h3>📦 Consultas comerciales</h3>
+<p>Contactanos para conocer el proyecto, sus características y las posibilidades de desarrollo.</p>
 <p><b>📍 Origen:</b> José C. Paz, Buenos Aires, Argentina</p>
-<p><b>🌎 Alcance:</b> Argentina y Latinoamérica</p>
+<p><b>🌎 Destino:</b> Argentina y Latinoamérica</p>
 <p><b>🤖 Producto:</b> Brazo robótico 4 GDL</p>
-<p><b>📩 Email:</b> armtronic
-<section id="equipo" class="fondo-alternativo">
-<div class="contenedor">
-<span class="etiqueta">Integrantes</span>
-<h2>Nuestro equipo.</h2>
-<p class="descripcion">
-Somos el equipo ARMTRONIC 2026, formado por estudiantes de 7-2 Informática.
-Cada integrante desempeña una función en el desarrollo del brazo robótico AT-2026 PRO.
-</p>
-
-<div class="equipo-grid">
-
-<article class="tarjeta">
-<span class="etiqueta">Software / Control</span>
-<h3>Mateo Pucheta</h3>
-<p>Responsable de la programación del control y la lógica del brazo robótico.</p>
-</article>
-
-<article class="tarjeta">
-<span class="etiqueta">Sistemas / Diseño</span>
-<h3>Ezequiel Ibarra</h3>
-<p>Responsable de la gestión de datos en Excel y el diseño visual del proyecto.</p>
-</article>
-
-<article class="tarjeta">
-<span class="etiqueta">Fabricación Base</span>
-<h3>Mateo Breit</h3>
-<p>Participa en la programación y fabricación de la base del brazo robótico.</p>
-</article>
-
-<article class="tarjeta">
-<span class="etiqueta">Documentación</span>
-<h3>Celeste Duarte</h3>
-<p>Responsable de la documentación, organización en Word y planillas Excel.</p>
-</article>
-
-<article class="tarjeta">
-<span class="etiqueta">Web / 3D</span>
-<h3>Franco Fernández</h3>
-<p>Desarrollo de la página web HTML y trabajos relacionados con impresión 3D.</p>
-</article>
-
-<article class="tarjeta">
-<span class="etiqueta">Impresión 3D</span>
-<h3>Kevin Paiva</h3>
-<p>Participa en el prototipado y fabricación de piezas mediante impresión 3D.</p>
-</article>
-
-<article class="tarjeta">
-<span class="etiqueta">Mecánica</span>
-<h3>Jeremías Martinez</h3>
-<p>Responsable del diseño de mecanismos y sistemas de transmisión.</p>
-</article>
-
-<article class="tarjeta">
-<span class="etiqueta">Ingeniería</span>
-<h3>Joaquín Galeano</h3>
-<p>Participa en el desarrollo de mecanismos y sistemas de transmisión.</p>
-</article>
-
-<article class="tarjeta">
-<span class="etiqueta">Fabricación</span>
-<h3>Rodrigo Fleitas</h3>
-<p>Participa en la fabricación y construcción de la base del brazo robótico.</p>
-</article>
-
-<article class="tarjeta">
-<span class="etiqueta">Calidad / Fabricación</span>
-<h3>Taiana Nuñez</h3>
-<p>Participa en la fabricación de la base y el control de calidad del proyecto.</p>
-</article>
-
+<p><b>📩 Consultas:</b> armtronic2026@gmail.com</p>
 </div>
 </div>
 </section>
+
+<!-- EQUIPO -->
+<section id="equipo">
+<h2>Nuestro <span>equipo</span></h2>
+<p class="sub">10 estudiantes de 7-2 Informática de José C. Paz. Cada integrante cumple un rol en el desarrollo del proyecto.</p>
+
+<div class="equipo">
+<div class="miembro"><b>Mateo Pucheta</b><span>Software / Control</span><p>Programación de control y lógica del brazo.</p></div>
+<div class="miembro"><b>Ezequiel Ibarra</b><span>Sistemas / Diseño</span><p>Gestión de datos en Excel y diseño visual.</p></div>
+<div class="miembro"><b>Mateo Breit</b><span>Fabricación Base</span><p>Programación y base del brazo robótico.</p></div>
+<div class="miembro"><b>Celeste Duarte</b><span>Documentación</span><p>Gestión documental en Word y análisis en Excel.</p></div>
+<div class="miembro"><b>Franco Fernández</b><span>Web / 3D</span><p>Desarrollo web HTML e impresión 3D.</p></div>
+<div class="miembro"><b>Kevin Paiva</b><span>Impresión 3D</span><p>Prototipado y fabricación de piezas.</p></div>
+<div class="miembro"><b>Jeremías Martinez</b><span>Mecánica</span><p>Diseño de mecanismos y transmisión.</p></div>
+<div class="miembro"><b>Joaquín Galeano</b><span>Ingeniería</span><p>Mecanismos y sistemas de transmisión.</p></div>
+<div class="miembro"><b>Rodrigo Fleitas</b><span>Fabricación</span><p>Base del brazo robótico.</p></div>
+<div class="miembro"><b>Taiana Nuñez</b><span>Calidad / Fabricación</span><p>Base del brazo y control de calidad.</p></div>
+</div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+<div class="contacto-box">
+<div>
+<h2>Conocé nuestro <span>proyecto</span></h2>
+<p>Escribinos para recibir información, conocer el funcionamiento del brazo robótico y consultar sobre nuestro desarrollo tecnológico.</p>
+<a href="https://www.instagram.com/armtronic.2026/" target="_blank" class="insta-btn">📸 Seguinos en Instagram @armtronic.2026</a>
+</div>
+
+<div>
+<p><b>📍 Ubicación:</b><br>José C. Paz, Buenos Aires, Argentina</p>
+<p style="margin-top:12px"><b>📧 Email:</b><br>armtronic2026@gmail.com</p>
+<p style="margin-top:12px"><b>📸 Instagram:</b><br>@armtronic.2026</p>
+<p style="margin-top:12px"><b>🕒 Horario:</b><br>Lun a Vie 9 a 18 hs</p>
+</div>
+</div>
+</section>
+
+<!-- PIE DE PÁGINA -->
+<footer>
+<p><b>⚡ ARMTRONIC 2026</b> — Proyecto tecnológico de José C. Paz, Buenos Aires, Argentina.</p>
+<p style="margin-top:8px">Instagram: <a href="https://www.instagram.com/armtronic.2026/" target="_blank">@armtronic.2026</a> | Email: armtronic2026@gmail.com</p>
+<p style="margin-top:8px">© 2026 Armtronic 2026 - Proyecto Escolar 7-2 Informática</p>
+</footer>
+
+<!-- BOTÓN VOLVER AL TÍTULO PRINCIPAL -->
+<a href="#inicio" class="volver-inicio">↑ Volver al inicio</a>
+
+</body>
+</html>
